@@ -1,6 +1,6 @@
 ---
-title: About
+title: About Me
 ---
-# About page
+# About me
 
-This page tells you a little bit about me.
+I'm a PhD student in Statistics and interested in computational propaganda research via statistical approaches.
