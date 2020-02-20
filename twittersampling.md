@@ -41,8 +41,22 @@ Twitter supplies 10% random sampled tweets for a fee, and 1% randomly sampled tw
         - Pearson product-moment correlation coefficient,  Jaccard score, and latent Dirichlet allocation model.
 
 - [Morstatter, F., Pfeffer, J., & Liu, H. (2014, April). **When is it biased? Assessing the representativeness of twitter's streaming API.** In Proceedings of the 23rd international conference on world wide web (pp. 555-556).](https://dl.acm.org/doi/abs/10.1145/2567948.2576952)
+    - About
+        - Find bias in the free 1% sample from Twitter's streaming API by Twitter's Sample API.
+        - In the paper, a hashtag is “biased” if the relative trend is statistically significantly over-represented or underrepresented in contrast to its true trend on Twitter.
+    - Comparing samples
+        - comparing the ranks of top hashtags (Kendall's \\( \tau \\) score), as well as the occurances of hashtags.
+    
 
 - [Morstatter, F., Pfeffer, J., Liu, H., & Carley, K. M. (2013, June). **Is the sample good enough? comparing data from twitter's streaming api with twitter's firehose. In Seventh international AAAI conference on weblogs and social media.**](https://arxiv.org/abs/1306.5204)
+    - About
+        - Find bias in the free 1% sample from Twitter's streaming API by Twitter's Firehose.
+    - Comparing samples
+        - Comparing the ranks of top hashtags (Kendall's \\( \tau \\) score), as well as the occurances of hashtags. 
+        - LDA topical models and Jenson-Shannon divergence.
+        - Network measures. (Node-level as well as network-level)
+        - Geographica measures. (e.g. proportions of tweets from different locations) 
+
 
 - [Rafail, P. (2018). **Nonprobability sampling and Twitter: Strategies for semibounded and bounded populations.** Social Science Computer Review, 36(2), 195-211.](https://journals.sagepub.com/doi/pdf/10.1177/0894439317709431)
     - About
