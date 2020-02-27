@@ -8,8 +8,15 @@ Sampling tweets from Twitter is not easy. This page lists papers and the samplin
 
 ## Introduction
 
-Twitter supplies 10% random sampled tweets for a fee, and 1% randomly sampled tweets for free. The exact details of how these samples are selected are not made public by Twitter. It is claimed by [Twitter API documentation](https://developer.twitter.com/en/docs) that they are random samples of all public tweets. (Probably we can do an experiment to test? XD)
+Twitter supplies 1% randomly sampled tweets for free. 100% of all public tweets is availible via Firehose and other data providers for a fee. 
 
+### Twitter's streaming API
+ Twitter's streaming API allows anyone to retrieve at most a 1% sample of all the data by providing parameters. The exact details of how these samples are selected are not made public by Twitter.
+
+
+### Twitter's sample API
+
+Twitter's streaming API takes no parameters and offers a 1% sample of tweets. [Kergl, D., Roedler, R., & Seeber, S. (2014, August). **On the endogenesis of Twitter's Spritzer and Gardenhose sample streams.** In 2014 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM 2014) (pp. 357-364). IEEE.](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6921610&tag=1) was able to reverse engineer the API and found that Twitter selects any tweets whose arriving time falls within a predetermined 10ms window (657,666). 
 
 
 ## Methodology papers
@@ -26,14 +33,28 @@ Twitter supplies 10% random sampled tweets for a fee, and 1% randomly sampled tw
         - <span style="color:red">Expert sampling</span> Only sample so called expert users on a wide range of topics. Over half a million experts are identified, using a crowd-source expert dection proposed in [Ghosh, S., Sharma, N., Benevenuto, F., Ganguly, N., & Gummadi, K. (2012, August). **Cognos: crowdsourcing search for topic experts in microblogs.** In Proceedings of the 35th international ACM SIGIR conference on Research and development in information retrieval (pp. 575-590).](https://people.mpi-sws.org/~gummadi/papers/twitter_wtf.pdf) Basically, they rank Twitter users by their List-rank matric that is related to the number of times a user is listed. This is more robust to spammers/link farmers than follow-links in Twitter. (weighted list-rank matric could be better? If we assign weights to lists?)
     - Comparing samples
         - Many characteristics are used.
-        - Pearson product-moment correlation coefficient,  Jaccard score, and latent Dirichlet allocation model.
+        - Pearson product-moment correlation coefficient, Jaccard score, and latent Dirichlet allocation model.
+
+- [Morstatter, F., & Liu, H. (2017). **Discovering, assessing, and mitigating data bias in social media.** Online Social Networks and Media, 1, 1-13.](https://www.sciencedirect.com/science/article/pii/S2468696416300040)
+    - About
+        - Investigate bias in Twitter's streaming API (using Firehose (100% data) and the sample api (1% random sample)).
+        - Propose methods to bypass the 1% limit of twitter's streaming API.
+        - This paper synthesizes the results of the previous papers. More technical details are revealed.
+
+    - Sampling schemes
+        - <span style="color:red">Splitting keywords</span>  By running multiple crawlers with splitted keywords, the user keeps each crawler from exceeding the 1% limit. The splitting strategies are explained in detailed in [Sampson, J., Morstatter, F., Maciejewski, R., & Liu, H. (2015, August). **Surpassing the limit: Keyword clustering to improve twitter sample coverage.** In Proceedings of the 26th ACM conference on hypertext & social media (pp. 237-245).](https://dl.acm.org/doi/abs/10.1145/2700171.2791030) 
+   
+    - Comparing samples
+        - comparing the ranks of top hashtags (Kendall's \\( \tau \\) score), as well as the occurances of hashtags.
+
 
 - [Morstatter, F., Pfeffer, J., & Liu, H. (2014, April). **When is it biased? Assessing the representativeness of twitter's streaming API.** In Proceedings of the 23rd international conference on world wide web (pp. 555-556).](https://dl.acm.org/doi/abs/10.1145/2567948.2576952)
     - About
-        - Find bias in the free 1% sample from Twitter's streaming API by Twitter's Sample API.
+        - Find bias in the free sample from Twitter's streaming API by Twitter's Sample API (gives a 1% random sample of all tweets).
         - In the paper, a hashtag is “biased” if the relative trend is statistically significantly over-represented or underrepresented in contrast to its true trend on Twitter.
     - Comparing samples
         - comparing the ranks of top hashtags (Kendall's \\( \tau \\) score), as well as the occurances of hashtags.
+        
     
 
 - [Morstatter, F., Pfeffer, J., Liu, H., & Carley, K. M. (2013, June). **Is the sample good enough? comparing data from twitter's streaming api with twitter's firehose. In Seventh international AAAI conference on weblogs and social media.**](https://arxiv.org/abs/1306.5204)
@@ -44,6 +65,7 @@ Twitter supplies 10% random sampled tweets for a fee, and 1% randomly sampled tw
         - LDA topical models and Jenson-Shannon divergence.
         - Network measures. (Node-level as well as network-level)
         - Geographical measures. (e.g. proportions of tweets from different locations) 
+
 
 
 - [Rafail, P. (2018). **Nonprobability sampling and Twitter: Strategies for semibounded and bounded populations.** Social Science Computer Review, 36(2), 195-211.](https://journals.sagepub.com/doi/pdf/10.1177/0894439317709431)
