@@ -10,18 +10,6 @@ Sampling tweets from Twitter is not easy. This page lists papers and the samplin
 
 Twitter supplies 10% random sampled tweets for a fee, and 1% randomly sampled tweets for free. The exact details of how these samples are selected are not made public by Twitter. It is claimed by [Twitter API documentation](https://developer.twitter.com/en/docs) that they are random samples of all public tweets. (Probably we can do an experiment to test? XD)
 
-## Applied Papers
-
-- [Im, J., Chandrasekharan, E., Sargent, J., Lighthammer, P., Denby, T., Bhargava, A., ... & Gilbert, E. (2019). **Still out there: Modeling and identifying Russian troll accounts on Twitter. arXiv preprint arXiv:1901.11162.**](https://arxiv.org/abs/1901.11162)
-    - About
-        - Russian Trolls
-    - Sampling schemes
-        - <span style="color:red">Official data.</span> 3841 accounts believed to be connected to the Internet Research Agency (IRA) released by Twitter. [Data](https://about.twitter.com/en_us/advocacy/elections-integrity.html#data)
-        - <span style="color:red">Account based sampling.</span> Random sample of US-located users and ensured they tweeted at least 5 times between 2012-2017. Then randomly sampled 171291 of the these accounts. Then sample the most recent 200 tweets of each account (Used **total variation** method ([Compton, R., Jurgens, D., & Allen, D. (2014, October). **Geotagging one hundred million twitter accounts with total variation minimization.** In 2014 IEEE international conference on big data (big data) (pp. 393-401). IEEE.](https://arxiv.org/abs/1404.7152)) to geolocate all users)
-        - <span style="color:red">Journalists' mentions.</span> Collected unseen accounts who have recently contacted high-profile political journalists on Twitter . High-profile journalists were selected from a pre-compiled [Twitter list](https://twitter.com/i/lists/15084461?lang=en).
-
-
-
 
 
 ## Methodology papers
@@ -55,7 +43,7 @@ Twitter supplies 10% random sampled tweets for a fee, and 1% randomly sampled tw
         - Comparing the ranks of top hashtags (Kendall's \\( \tau \\) score), as well as the occurances of hashtags. 
         - LDA topical models and Jenson-Shannon divergence.
         - Network measures. (Node-level as well as network-level)
-        - Geographica measures. (e.g. proportions of tweets from different locations) 
+        - Geographical measures. (e.g. proportions of tweets from different locations) 
 
 
 - [Rafail, P. (2018). **Nonprobability sampling and Twitter: Strategies for semibounded and bounded populations.** Social Science Computer Review, 36(2), 195-211.](https://journals.sagepub.com/doi/pdf/10.1177/0894439317709431)
@@ -85,6 +73,19 @@ Twitter supplies 10% random sampled tweets for a fee, and 1% randomly sampled tw
 
     - Comparing samples
         - trands in hashtag usage.
+
+
+## Applied Papers
+
+- [Im, J., Chandrasekharan, E., Sargent, J., Lighthammer, P., Denby, T., Bhargava, A., ... & Gilbert, E. (2019). **Still out there: Modeling and identifying Russian troll accounts on Twitter. arXiv preprint arXiv:1901.11162.**](https://arxiv.org/abs/1901.11162)
+    - About
+        - Russian Trolls
+    - Sampling schemes
+        - <span style="color:red">Official data.</span> 3841 accounts believed to be connected to the Internet Research Agency (IRA) released by Twitter. [Data](https://about.twitter.com/en_us/advocacy/elections-integrity.html#data)
+        - <span style="color:red">Account based sampling.</span> Random sample of US-located users and ensured they tweeted at least 5 times between 2012-2017. Then randomly sampled 171291 of the these accounts. Then sample the most recent 200 tweets of each account (Used **total variation** method ([Compton, R., Jurgens, D., & Allen, D. (2014, October). **Geotagging one hundred million twitter accounts with total variation minimization.** In 2014 IEEE international conference on big data (big data) (pp. 393-401). IEEE.](https://arxiv.org/abs/1404.7152)) to geolocate all users)
+        - <span style="color:red">Journalists' mentions.</span> Collected unseen accounts who have recently contacted high-profile political journalists on Twitter . High-profile journalists were selected from a pre-compiled [Twitter list](https://twitter.com/i/lists/15084461?lang=en).
+
+
 
 ## Data
 
