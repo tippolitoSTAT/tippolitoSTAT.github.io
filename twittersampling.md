@@ -97,6 +97,7 @@ Twitter's streaming API takes no parameters and offers a 1% sample of tweets. [K
         - trands in hashtag usage.
 
 
+
 ## Applied Papers
 
 - [Im, J., Chandrasekharan, E., Sargent, J., Lighthammer, P., Denby, T., Bhargava, A., ... & Gilbert, E. (2019). **Still out there: Modeling and identifying Russian troll accounts on Twitter. arXiv preprint arXiv:1901.11162.**](https://arxiv.org/abs/1901.11162)
